@@ -1,0 +1,19 @@
+<section class="pokemon-grid">
+    @for(pokemon of pokemonList; track pokemon.name){
+    <div class="pokemon-card">
+        <div class="imagen border rounded-circle">
+            <img [src]="createBackImg(getPokemonId(pokemon.url))" alt={{pokemon.name}}>
+        </div>
+        <h1>Nº {{getPokemonId(pokemon.url)}}</h1>
+        <h1>{{pokemon.name}}</h1>
+        <div class="p-3">
+            <a class="text-decoration-none text-dark btn-ver-detalles py-1 px-2 rounded-3 border-0 shadow"
+                [routerLink]="['/pokemon', getPokemonId(pokemon.url)]">
+                
+                    <span>Combatir</span>
+              
+            </a>
+        </div>
+    </div>
+    }
+</section>
