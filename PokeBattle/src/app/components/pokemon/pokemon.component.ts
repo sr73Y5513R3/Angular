@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../../models/pokemon.interface';
+import { Component, Input, OnInit } from '@angular/core';
+import { PokemonResponse } from '../../models/pokemon.interface';
 import { PokemonService } from '../../service/pokemon.service';
 
 @Component({
@@ -9,7 +9,16 @@ import { PokemonService } from '../../service/pokemon.service';
 })
 export class PokemonComponent implements OnInit{
 
-  pokemonList: Pokemon[] = [];
+
+  //Hay que plantearlo de distinta manera no mostrando la lista
+  //Si no que van a salir los dos pokemon y con un input en la vista
+  //Va a ir cambiando el pokemon
+  //Me falta poner un @Input() y en el onInit pues poner la idPokemon
+  //Esto para despues utilizarlo en el battle-pokemon
+  //Hay que hacer un @output donde sea el daño que va ha hacer
+  //Y un metodo que calcule el daño del pokemon
+
+  pokemonList: PokemonResponse[] = [];
 
   constructor(private pokemonService : PokemonService){}
  

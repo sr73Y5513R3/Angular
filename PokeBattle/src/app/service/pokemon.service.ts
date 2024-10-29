@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PokemonResponse } from '../models/pokemon.interface';
 import { Observable } from 'rxjs';
-import { PokemonDetails } from '../models/pokemonDetails.interface';
+
 
 
 @Injectable({
@@ -17,7 +17,7 @@ export class PokemonService {
   }
 
   getPokemonDetails (id: number){
-    return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    return this.http.get<PokemonResponse>(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
 
   createBackImg (id:number): string{

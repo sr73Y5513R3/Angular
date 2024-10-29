@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { BattlePokemonComponent } from './components/battle-pokemon/battle-pokemon.component';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
