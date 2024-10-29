@@ -1,0 +1,9 @@
+.batalla {
+    margin: 0;
+    width: 100;
+    height: 100vh; /* Altura completa de la ventana */
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d83htw0-ec490c3b-f7dd-4570-a698-8404a8a12f99.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDgzaHR3MC1lYzQ5MGMzYi1mN2RkLTQ1NzAtYTY5OC04NDA0YThhMTJmOTkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zFeU6uxxutMPR_qMMoP5MOM8N4EqbYuZWc_naTh8Rpw') ; /* Cambia el nombre del archivo según tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}

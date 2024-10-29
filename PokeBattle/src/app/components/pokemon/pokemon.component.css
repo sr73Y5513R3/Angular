@@ -1,40 +1,110 @@
-.pokemon-grid {
-    margin: 20px; 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);  
-    gap: 20px;  
+.type {
+    padding: 4px 15px;
+    margin: 5px;
+    font-size: 20px;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 35px;
+    cursor: pointer;
+    
 }
 
-.pokemon-card {
-    background-color: #c1e1b9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
+#normal {
+    background-color: #a8a878;
 }
 
- 
-.pokemon-card img {
-    width: 200px;  
-    height: auto;
-    margin-bottom: 10px;
+#fire {
+    background-color: #f08030;
+}
+
+#water {
+    background-color: #6890f0;
+}
+
+#electric {
+    background-color: #f8d030;
+}
+
+#grass {
+    background-color: #78c850;
+}
+
+#poison {
+    background-color: #a040a0;
+}
+
+#bug {
+    background-color: #a8b820;
+}
+
+#fairy {
+    background-color: #f0b0e0;
+}
+
+#fighting {
+    background-color: #c03028;
+}
+
+#flying {
+    background-color: #a890f0;
+}
+
+#ghost {
+    background-color: #705898;
+}
+
+#ice {
+    background-color: #98d8d8;
+}
+
+#rock {
+    background-color: #b8a038;
+}
+
+#steel {
+    background-color: #b8b8d0;
+}
+
+#dark {
+    background-color: #705848;
+}
+
+#ground {
+    background-color: #e0c068;
+}
+
+#psychic {
+    background-color: #f85888;
+}
+
+#dragon {
+    background-color: #7038f8;
+}
+
+.stats p{
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.Ps{
+    border-radius: 30% 0 0 30% ;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.card{
+    border: 2px solid black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+ngb-progressbar {
+    border-radius: 5px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    background-color: #f8f9fa;
 }
 
 
-.pokemon-card:hover {
-    transform: scale(1.05);
-}
 
-.pokemon-card .imagen{
-    padding: 10% 0px;
-    margin: 0 40px;
-    background-color: #b3daab8c;
-    border-color: #c1e1b9;
-}
 
-.pokemon-card h1{
-    margin-top: 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-}

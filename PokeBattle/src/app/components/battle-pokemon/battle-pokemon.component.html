@@ -1,1 +1,51 @@
-<!--<app-pokemon [idPokemon]=pokemonP1></app-pokemon>-->
+<div class="batalla">
+    <div class="container fluid">
+        <div class="row">
+            <app-pokemon 
+                [pokemonId]="pokemonP1" 
+                [life]="lifeP1" 
+                [isMyTurn]="pokemonTurn == 1" 
+                [jugador]="jugador2"
+                (onAttackDone)="applyDamage($event)">
+            </app-pokemon>
+            <app-pokemon 
+                [pokemonId]="pokemonP2" 
+                [life]="lifeP2" 
+                [isMyTurn]="pokemonTurn == 2" 
+                [jugador]="jugador1"
+                (onAttackDone)="applyDamage($event)">
+            </app-pokemon>
+        </div>
+    
+        
+        
+    </div>
+</div>
+<div class="botones d-flex gap-4 mt-4">
+    <div class="numeros d-flex row gap-3">
+        @if (lifeP1 === 100 && lifeP2 === 100) {
+            <div>
+                <label for="numeric-input">Ingresa un número:</label>
+                <input id="numeric-input" type="number" [(ngModel)]="pokemonP1" />
+            </div>
+            <div>
+                <label for="numeric-input">Ingresa un número:</label>
+                <input id="numeric-input" type="number" [(ngModel)]="pokemonP2" />
+            </div>
+        }
+    </div>
+   <div class="reinicio d-flex row gap-3">
+    <div class="reiniciarBatalla">
+        <button class="btn btn-primary" (click)="reiniciarBatalla()">Reiniciar batalla</button>
+    </div>
+    
+    <div class="reiniciarBatallaRandom">
+        <button class="btn btn-primary" (click)="reiniciarBatallaRandom()">Pokemon randoms</button>
+    </div>
+   </div>
+
+   
+</div>
+
+
+

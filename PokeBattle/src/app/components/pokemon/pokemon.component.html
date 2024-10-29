@@ -1,19 +1,88 @@
-<section class="pokemon-grid">
-    @for(pokemon of pokemonList; track pokemon.name){
-    <div class="pokemon-card">
-        <div class="imagen border rounded-circle">
-            <img [src]="createBackImg(pokemon.id)" alt={{pokemon.name}}>
-        </div>
-        <h1>Nº {{pokemon.id}}</h1>
-        <h1>{{pokemon.name}}</h1>
-        <div class="p-3">
-            <a class="text-decoration-none text-dark btn-ver-detalles py-1 px-2 rounded-3 border-0 shadow"
-                [routerLink]="['/pokemon', pokemon.id]">
-                
-                    <span>Combatir</span>
-              
-            </a>
-        </div>
+
+@if (jugador === "pokemonP1") {
+<div class="d-flex row" style="width: 100%">
+    <div class="imagen col-5">
+        <img [src]="createBackImg(pokemonId!)" class="card-img-top" style="width: 22rem" [alt]="pokemon?.name" />
     </div>
-    }
-</section>
+    <div class="card col-6 ms-4 gap-1 mt-4" style="height: 10rem;">
+        <div class="title d-flex gap-4 mt-3">
+            <h5 class="card-title d-flex mt-2" style="text-transform: uppercase;">{{ pokemon?.name }} &nbsp;
+                Nº{{pokemon?.id}}</h5>
+            <h3 class="d-flex">
+                @for(type of pokemon?.types ; track type.type.name){
+                <h5 class="type" id="{{type.type.name}}">{{type.type.name}}</h5>
+                }
+            </h3>
+
+        </div>
+        <div class="d-flex gap-3">
+            @for(stats of pokemon?.stats ; track stats.base_stat){
+                @if (stats.stat.name === "attack" || stats.stat.name === "defense") {
+                    <div class="stats d-flex">
+                        <p class="nameStat" id="{{stats.stat.name}}">{{stats.stat.name}}: &nbsp;</p>
+                        <p>{{stats.base_stat}}</p>
+                    </div>
+                }
+            }
+            
+        </div>
+        <div class="barraVida d-flex align-items-center">
+            <p class="Ps px-2">PS:</p>
+            <ngb-progressbar class="mb-3 w-100 mt-1" [type]="getProgressBarColor()" [value]="life"><i>{{ life
+                    }}%</i></ngb-progressbar>
+        </div>
+          @if(isMyTurn == true){
+          <button (click)="doAttack()" class="btn btn-primary">Attack</button>
+          } @else {
+          <button disabled="disabled" class="btn btn-primary">
+            Waiting attack..
+          </button>
+          }
+    </div>
+
+</div>
+}@else{
+<div class="d-flex row" style="width: 100%">
+
+    <div class="card col-6 me-4 gap-1 mt-4" style="height: 10rem;">
+        <div class="title d-flex gap-4 mt-3">
+            <h5 class="card-title d-flex mt-2" style="text-transform: uppercase;">{{ pokemon?.name }} &nbsp;
+                Nº{{pokemon?.id}}</h5>
+            <h3 class="d-flex">
+                @for(type of pokemon?.types ; track type.type.name){
+                <h5 class="type" id="{{type.type.name}}">{{type.type.name}}</h5>
+                }
+            </h3>
+
+        </div>
+        
+        <div class="d-flex gap-3">
+            @for(stats of pokemon?.stats ; track stats.base_stat){
+                @if (stats.stat.name === "attack" || stats.stat.name === "defense") {
+                    <div class="stats d-flex">
+                        <p class="nameStat" id="{{stats.stat.name}}">{{stats.stat.name}}: &nbsp;</p>
+                        <p>{{stats.base_stat}}</p>
+                    </div>
+                }
+            }
+            
+        </div>
+        <div class="barraVida d-flex align-items-center">
+            <p class="Ps px-2">PS:</p>
+            <ngb-progressbar class="mb-3 w-100" [type]="getProgressBarColor()" [value]="life"><i>{{ life
+                    }}%</i></ngb-progressbar>
+        </div>
+        
+          @if(isMyTurn == true){
+          <button (click)="doAttack()" class="btn btn-primary">Attack</button>
+          } @else {
+          <button disabled="disabled" class="btn btn-primary">
+            Waiting attack..
+          </button>
+          }
+    </div>
+    <div class="imagen col-4">
+        <img [src]="createFrontImg(pokemonId!)" class="card-img-top" style="width: 22rem" [alt]="pokemon?.name" />
+    </div>
+</div>
+}
