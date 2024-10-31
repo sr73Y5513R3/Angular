@@ -1,0 +1,12 @@
+export class UserTdo {
+    constructor(
+      public nomnbre: string,
+      public apellidos: string,
+      public Dni: string,
+      public email: string,
+      public telefono: string,
+      public sexo: string,
+      public conocimiento: string,
+      public contrasenia: string,
+    ) {}
+  }
